@@ -1,0 +1,51 @@
+SYSTEM = Perovskite_MD
+
+!Start Parameters:
+ ISTART = 1        (Read existing wavefunction) 
+ INIWAV = 1        (Random initial wavefunction)
+
+!Parallel Options: 
+ LPLANE = .TRUE.   (Real space distribution)
+ NPAR   = 4        (Max is no. nodes)
+
+!Electronic Relaxation:
+! PREC  = Normal  (Precision level)
+! LREAL = Auto    (Projection operators: automatic)
+ ENMAX = 300 eV    (Plane-wave cutoff) 
+ NELM  = 40        (Max number of SCF steps)   
+! EDIFF = 1E-06     (SCF convergence) 
+ GGA   =  PS       (PBE exchange-correlation)
+
+!Ionic Relaxation:
+ EDIFFG =  -0.01    (Ionic convergence)
+ ISMEAR =      0     (Gaussian smearing, Metals:1, MP)
+
+ SIGMA  =      0.001  (Smearing in eV, Metals:0.2)
+
+! From http://cms.mpi.univie.ac.at/vasp/vasp/Molecular_Dynamics.html
+LREAL = A                      # real space projection                         
+PREC  = Normal                 # chose Low only after tests
+EDIFF = 1E-5                   # do not use default (too large drift)          
+ALGO   = Fast               # recommended for MD (fall back ALGO = Fast)     
+MAXMIX = 40                    # reuse mixer from one MD step to next          
+!NCORE= 4 or 8                  # one orbital on 4 cores                        
+ISYM = 0                       # no symmetry                                                 
+NELMIN = 4                     # minimum 4 steps per time step, avoid breaking after 2 steps
+                
+# MD (do little writing to save disc space)                                    
+IBRION = 0 ;  NWRITE = 0 ; LCHARG = .FALSE. ; LWAVE = .FALSE.
+
+# Number of steps...
+NSW = 1500000
+
+# THERMOSTAT  
+TEBEG =   TEMP
+TEEND =   TEMP
+                                                 
+# POTIM = timestep (fs) when doing MD
+# canonic (Nose) MD with XDATCAR updated every 50 steps                        
+SMASS = 3 ;  NBLOCK = 50 ; POTIM = 0.5                                         
+# micro canonical MD with temperature scaling every 50 steps
+# good for equlibration but usually better to use Nose thermostat
+#SMASS = -1 ; NBLOCK = 50 ; POTIM = 1.5
+
