@@ -1,0 +1,30 @@
+# Really should write a nice ncurses tool for this...
+
+#> sed -n 6p POSCAR_2x2x2_MAPI
+#   C   H   I   N  Pb
+#> sed -n 6p POSCAR_2x2x2_MAPCl
+#   C  Cl   H   N  Pb
+#> sed -n 6p POSCAR_2x2x2_MAPBr
+#   Br   C   H   N  Pb
+
+POTCARS="/home/jarvist/Potpaw_PBE.52/"
+
+cat $POTCARS/C/POTCAR > POTCAR_2x2x2_MAPI
+cat $POTCARS/H/POTCAR >> POTCAR_2x2x2_MAPI
+cat $POTCARS/I/POTCAR >> POTCAR_2x2x2_MAPI
+cat $POTCARS/N/POTCAR >> POTCAR_2x2x2_MAPI
+cat $POTCARS/Pb_d/POTCAR >> POTCAR_2x2x2_MAPI
+
+cat $POTCARS/C/POTCAR > POTCAR_2x2x2_MAPCl
+cat $POTCARS/Cl/POTCAR >> POTCAR_2x2x2_MAPCl
+cat $POTCARS/H/POTCAR >> POTCAR_2x2x2_MAPCl
+cat $POTCARS/N/POTCAR >> POTCAR_2x2x2_MAPCl
+cat $POTCARS/Pb_d/POTCAR >> POTCAR_2x2x2_MAPCl
+
+cat $POTCARS/Br/POTCAR > POTCAR_2x2x2_MAPBr
+cat $POTCARS/C/POTCAR >> POTCAR_2x2x2_MAPBr
+cat $POTCARS/H/POTCAR >> POTCAR_2x2x2_MAPBr
+cat $POTCARS/N/POTCAR >> POTCAR_2x2x2_MAPBr
+cat $POTCARS/Pb_d/POTCAR >> POTCAR_2x2x2_MAPBr
+
+
