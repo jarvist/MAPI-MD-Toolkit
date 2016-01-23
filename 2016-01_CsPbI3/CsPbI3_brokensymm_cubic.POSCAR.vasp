@@ -1,4 +1,4 @@
-Cs-Pb-I; starting from broken symm 2014_
+Cs-Pb-I, PBESol 700 eV 6x6x6 KP; starting from (manually broken symm) 2014 structure CH3NH3PbI3_cubic.POSCAR.vasp ~ JMF 2016-01
    1.00000000000000     
      6.2570621885033750   -0.0459134730019501   -0.0243441434321899
      0.0135003257861881    6.2839356826101858    0.0090362347493811
