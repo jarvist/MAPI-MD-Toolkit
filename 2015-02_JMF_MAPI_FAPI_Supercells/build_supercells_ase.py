@@ -5,7 +5,7 @@ import ase.io.vasp
 
 cell = ase.io.vasp.read_vasp("pseudocubic_CH3NH3PbI3.POSCAR.vasp")
 
-ase.io.vasp.write_vasp("POSCAR_6x6x6_MAPI",cell*(4,4,4), label='POSCAR_4x4x4_MAPI',direct=True,sort=True,vasp5=True)
+ase.io.vasp.write_vasp("POSCAR_4x4x4_MAPI",cell*(4,4,4), label='POSCAR_4x4x4_MAPI',direct=True,sort=True,vasp5=True)
 ase.io.vasp.write_vasp("POSCAR_6x6x6_MAPI",cell*(6,6,6), label='POSCAR_6x6x6_MAPI',direct=True,sort=True,vasp5=True)
 ase.io.vasp.write_vasp("POSCAR_8x8x8_MAPI",cell*(8,8,8), label='POSCAR_8x8x8_MAPI',direct=True,sort=True,vasp5=True)
 
